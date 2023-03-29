@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/grid.css">
+        <link rel="stylesheet" href="./assets/css/reponsive.css">
         <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.3.0/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +20,8 @@
         <!-- Block Element Modifier  -->
         <div class="app">
             <header class="header">
-                <div class="grid">
-                    <nav class="header__navbar">
+                <div class="grid wide">
+                    <nav class="header__navbar hide-on-mobile-tablet">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                                 Tải ứng dụng
@@ -123,7 +125,10 @@
                     
                     <!-- header with search -->
                     <div class="header-with-search">
-                        <div class="header__logo">
+                        <label for="mobile-search-checkbox" class="header__moblie-search">
+                            <i class="header__moblie-search-icon fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <div class="header__logo hide-on-tablet">
                             <a href="./index.html" class="header__logo-link">
                                 <svg viewBox="0 0 192 65" class="header__logo-img">
                                     <g fill-rule="evenodd">
@@ -134,6 +139,8 @@
                                 </svg>  
                             </a>                          
                         </div>
+
+                        <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
 
                         <div class="header__search">
                             <div class="header__search-ipnut-wrap">
@@ -315,12 +322,26 @@
                         </div>
                     </div>
                 </div>
+                <ul class="header__sort-bar">
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Liên quan</a>
+                    </li>
+                    <li class="header__sort-item header__sort-item--active">
+                        <a href="" class="header__sort-link">Mới nhất</a>
+                    </li>
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Bán chạy</a>
+                    </li>
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Giá</a>
+                    </li>
+                </ul>
             </header>
 
             <div class="app__container">
-                <div class="grid">
-                    <div class="grid__row app__content">
-                        <div class="grid__column-2">
+                <div class="grid wide">
+                    <div class="row sm-gutter app__content">
+                        <div class="col l-2 m-0 c-0">
                             <nav class="category">
                                 <h3 class="category__heading">
                                     <i class="category__heading-icon fa-solid fa-list"></i>
@@ -356,8 +377,8 @@
                             </nav>
                         </div>
     
-                        <div class="grid__column-10">
-                            <div class="home-filter">
+                        <div class="col l-10 m-12 c-12">
+                            <div class="home-filter hide-on-mobile-tablet">
                                 <span class="home-filter__label">Sắp xếp theo</span>
                                 <button class="home-filter__btn btn btn--primary">Phổ biến</button>
                                 <button class="home-filter__btn btn">Mới nhất</button>
@@ -394,11 +415,37 @@
                                 </div>
                             </div>
 
+                            <nav class="mobile-category">
+                                <ul class="mobile-category__list">
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Hàng mới về</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Laptop mỏng nhẹ</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Laptop Gaming</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Laptop</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Màn hình</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Chuột & bàn phím</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Thiết bị mạng</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
                             <div class="home-product">
                                 <!-- grid -> row -> column -->
-                                <div class="grid__row">
+                                <div class="row sm-gutter">
                                     <!-- product item -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7WD9dC7_g4m0X4wbVplPG2ZMhqVA0e1Y9TeTn5y1d5VTZQlXP);"></div>
                                             <h4 class="home-product-item__name">[MÃ ELBAU4 GIẢM 4%] Card Màn Hình ASUS Phoenix GeForce GTX1650 -4GD6</h4>
@@ -434,7 +481,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/9200422d42f63221431e202027ae1aa2);"></div>
                                             <h4 class="home-product-item__name">[Mã ELLAP5 giảm đến 1TR2] Laptop ASUS ROG G513IE-HN246W R7-4800H| 8GB| 512SSD| RTX 3050Ti 4GB| 15.6 FHD 144Hz</h4>
@@ -470,7 +517,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22110-fu6baq04bojv67_tn);"></div>
                                             <h4 class="home-product-item__name">Laptop Asus TUF Gaming F15 FX506LHB-HN188W i5-10300H|8GB|512GB|GTX1650 4GB|15.6 FHD</h4>
@@ -506,7 +553,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/d43f76ff59dddc23fd8356d0e371398a);"></div>
                                             <h4 class="home-product-item__name">/TẶNG 3 THÁNG ADOBE/ Màn Hình ASUS ProArt PA248QV (24.1-inch FHD/IPS/75Hz/5ms/Chuyên Đồ Họa)</h4>
@@ -542,7 +589,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/5271c3d4938af8f643045b51378f7a8c);"></div>
                                             <h4 class="home-product-item__name">Màn hình Asus TUF GAMING (VG279Q1A) 27″ | IPS | FHD | 165Hz | Đen</h4>
@@ -578,7 +625,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/4791856989aefef8e8447af79d523505);"></div>
                                             <h4 class="home-product-item__name">Intel Core i5 10400F 2.9GHz upto 4.3GHz 6 nhân 12 luồng, 12MB Cache, 65W - Full box chính hãng</h4>
@@ -614,7 +661,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/46f4283d964fce5b21e89d1b83748120);"></div>
                                             <h4 class="home-product-item__name">Bàn Phím CƠ ZIYOU K3 Luxury Cao Cấp, Phím Gõ Êm Sử Dụng Trục Cơ Red Switch, Led 16,5 Triệu Màu 10 Chế Độ, Bảo Hành 12t</h4>
@@ -650,7 +697,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/dd28b243844a6eba0b650a3c44681fd4);"></div>
                                             <h4 class="home-product-item__name">Chuột Máy Tính Gaming Led Rgb LOGITECH G402 Chuột Vi Tính Laptop Chơi Game Cực Nhạy Giá Rẻ</h4>
@@ -686,7 +733,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134201-23030-vvikwnbwl5nvb1);"></div>
                                             <h4 class="home-product-item__name">Máy PC GAMING Chiến GATA 5, FO4, Liên Minh, AUDITION, Render Video (Tặng phím chuột, chưa bao gồm màn hình)</h4>
@@ -722,7 +769,7 @@
                                             </div>
                                         </a>
                                     </div> 
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a class="home-product-item" href="#">
                                             <div class="home-product-item__img" style="background-image: url(https://down-vn.img.susercontent.com/file/85d8f909e04d824ff1ef384f33fdd74e);"></div>
                                             <h4 class="home-product-item__name">Router ASUS TUF Gaming Băng Tần Kép TUF-AX5400 | Wifi 6 (802.11ax) | AiMesh WIFI Mesh | MU-MIMO |</h4>
@@ -800,9 +847,9 @@
             </div>
 
             <footer class="footer">
-                <div class="grid">
-                    <div class="grid__row">
-                        <div class="grid__column-2-4">
+                <div class="grid wide footer__content">
+                    <div class="row">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -840,7 +887,7 @@
                                 </li>   
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">VỀ SHOPEE</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -872,7 +919,7 @@
                                 </li>   
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">THANH TOÁN</h3>
                             <ul class="footer__list-pay">
                                 <li class="footer__list-pay-item">
@@ -901,7 +948,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -924,7 +971,7 @@
                                 </li>   
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-8 c-12">
                             <h3 class="footer__heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
                             <div class="footer__down">
                                 <img src="./assets/img/QR%20code.png" alt="Download gr" class="footer__down-qr">
@@ -939,8 +986,8 @@
                 </div>
             </footer>
             <div class="footer__ending">
-                <div class="footer__ending-content">
-                    <div class="content__header">
+                <div class="grid wide">
+                    <div class="row content__header">
                         <div class="content__item">
                             <a href="" class="content__item-link">CHÍNH SÁCH BẢO MẬT</a>
                         </div>
