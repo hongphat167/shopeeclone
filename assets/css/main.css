@@ -522,7 +522,6 @@
 .header__cart {
     width: 150px;
     text-align: center;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-wrap {
@@ -1419,6 +1418,7 @@ i.home-product-item__like-icon-fill {
     display: block;
     color: rgba(0,0,0,.54);
 }
+
 
 .footer__ending-img {
     align-items: center;
