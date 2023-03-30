@@ -143,6 +143,14 @@
         padding: 6px 8px;
     }
 
+    .footer__ending-text {
+        padding: 0 15px;
+    }
+
+    .content__item {
+        border-right: none;
+    }
+
     @keyframes mobileSearchSideIn {
         from {
             opacity: 0;
