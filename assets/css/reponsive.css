@@ -151,6 +151,9 @@
         border-right: none;
     }
 
+    .home-product-item__sale-off-label {
+        display: block;
+    }
     @keyframes mobileSearchSideIn {
         from {
             opacity: 0;
